@@ -19,17 +19,18 @@ const SearchResults: React.FC<SearchResultsProps> = ({
   highlightIndex,
   handleCapitalSelection,
 }) => {
-
   const { theme } = useTheme();
 
   const textWithHighlight = (text: string, partToHighlight: string) => {
+    if (!text.includes(partToHighlight)) return text;
     const index = text.toLowerCase().indexOf(partToHighlight.toLowerCase());
     const firstPart = text.slice(0, index);
+    const partToHighlightWithRightCase = text.slice(index, index + partToHighlight.length);
     const secondPart = text.slice(index + partToHighlight.length);
     return (
       <>
         {firstPart}
-        <span className={appendThemeClass('hit-text', theme)}>{text.slice(index, index + partToHighlight.length)}</span>
+        <span className={appendThemeClass('hit-text', theme)}>{partToHighlightWithRightCase}</span>
         {secondPart}
       </>
     );
