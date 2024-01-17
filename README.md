@@ -28,7 +28,8 @@ This repo has been created as part of an interview process to fulfill the follow
 
 ## Extra bits
 
-- **Added loading animations** _(properly visible at low network speeds)_, **a wiggle animation for the button that implies what to do, and a theme switcher button** _(the default theme depends on the browser preferences of the user, and the manual choice is stored in local storage)_.
+- **Added loading animations** _(properly visible at low network speeds)_, **a wiggle animation for the button that implies what to do, and a theme switcher button** _(the default theme depends on the browser preferences of the user, and the manual choice is stored in local storage)_. <br>
+  `Sidenote: github appends it's own weird stuff to elements defined in .md files so if you're looking at this there the images below will look disorganized.`
 
 <br>
 
