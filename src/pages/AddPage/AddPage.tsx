@@ -2,21 +2,18 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAppSelector } from '../../redux/hooks';
 import {
     selectSelectedCapitals,
-    removeCapital,
     addCapital,
 } from '../../redux/selectedCapitalsSlice';
 import { useDispatch } from 'react-redux';
 import { CapitalCity } from '../../utils/types';
 import useGetCapitals from '../../customHooks/useGetCapitals';
-import CapitalSearchForm from '../../components/CapitalSearchForm/CapitalSearchForm';
 import { defaultCapitals } from '../../utils/defaultCapitals';
-import { Theme, ToastContainer, ToastPosition, toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import { useEffect } from 'react';
 import { FiArrowLeft as BackIcon } from "react-icons/fi";
 import 'react-toastify/dist/ReactToastify.min.css';
 import './AddPage.scss';
 import { appendThemeClass, useTheme } from '../../utils/ThemeContext';
-import Loader from '../../components/Loader/Loader';
 import { toastSettings } from '../../utils/toastSettings';
 import CapitalOptions from '../../components/CapitalOptions/CapitalOptions';
 

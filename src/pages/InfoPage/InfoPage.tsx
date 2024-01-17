@@ -1,9 +1,9 @@
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import useGetWeatherByCapital from '../../customHooks/useGetWeatherByCapital';
 import WeatherIcon from '../../components/WeatherIcon/WeatherIcon';
 import { FiSunrise, FiSunset } from "react-icons/fi";
-import { FaTemperatureHalf } from "react-icons/fa6";
+import { FaTemperatureHalf, FaTrash } from "react-icons/fa6";
 import './InfoPage.scss';
 import { appendThemeClass, useTheme } from '../../utils/ThemeContext';
 import { FiArrowLeft as BackIcon } from "react-icons/fi";
@@ -11,6 +11,10 @@ import Loader from '../../components/Loader/Loader';
 import { useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { toastSettings } from '../../utils/toastSettings';
+import { FaTrashAlt } from 'react-icons/fa';
+import { addCapital, removeCapital } from '../../redux/selectedCapitalsSlice';
+import { useDispatch } from 'react-redux';
+import { CapitalCity } from '../../utils/types';
 
 function formatTime(unixTimestamp: number) {
   const date = new Date(unixTimestamp * 1000);
@@ -28,6 +32,14 @@ const InfoPage: React.FC = () => {
 
   if (!capitalName) return <div>no capital selected</div>;
   const { error, weatherData, loading } = useGetWeatherByCapital(capitalName);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleRemoveClick = () => {
+    dispatch(removeCapital(capitalName));
+    navigate('/');
+  };
 
   useEffect(() => {
     if (!loading && error) {
@@ -72,8 +84,11 @@ const InfoPage: React.FC = () => {
               {formatTime(weatherData.sys.sunrise)}
               <FiSunset />
               {formatTime(weatherData.sys.sunset)}
-
             </div>
+
+            <button className='delete-button' onClick={handleRemoveClick}>
+              <FaTrashAlt />
+            </button>
           </>
         )}
       </div>

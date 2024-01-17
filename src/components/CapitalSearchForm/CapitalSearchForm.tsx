@@ -4,7 +4,6 @@ import { getTopEightFilterResults } from '../../utils/getTopEightFilterResults';
 import './CapitalSearchForm.scss';
 import classNames from 'classnames';
 import { appendThemeClass, useTheme } from '../../utils/ThemeContext';
-import { FaTreeCity } from "react-icons/fa6";
 import SearchResults from '../SearchResults/SearchResults';
 
 interface CapitalSearchFormProps {

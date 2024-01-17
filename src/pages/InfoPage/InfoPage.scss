@@ -8,6 +8,7 @@
   min-height: 100vh;
   font-size: 2rem;
   gap: 0.5rem;
+  margin-top: 2rem;
 
   .time-data {
     display: flex;
@@ -26,6 +27,10 @@
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 2rem;
+
+    @media (max-height: 700px) {
+      margin-bottom: 0;
+    }
   }
 
   .main-weather-icon {
@@ -86,6 +91,20 @@
       &:hover {
         background-color: $color-intense-green;
       }
+    }
+  }
+
+  .delete-button {
+    background-color: transparent;
+    border: none;
+    margin-top: 3rem;
+    cursor: pointer;
+    &:hover {
+      color: $color-delete;
+    }
+
+    @media (max-height: 700px) {
+      margin-top: 1rem;
     }
   }
 
