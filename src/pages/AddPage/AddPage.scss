@@ -1,0 +1,51 @@
+@import "../../utils/_variables.scss";
+
+.add-page-outer-shell {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  gap: 2rem;
+
+  .back-box {
+    position: absolute;
+    top: 0.6rem;
+    left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    padding: 0.4rem;
+    border-radius: 0.8rem;
+    background-color: $color-bright-pearl;
+    color: $color-deep-dark;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-intense-bright;
+      transform: scale(1.05);
+    }
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    &.light {
+      background-color: $color-matte-green;
+
+      color: $color-bright-pearl;
+
+      &:hover {
+        background-color: $color-intense-green;
+      }
+    }
+  }
+
+  .all-added {
+    font-size: 2rem;
+    &.light {
+      color: $color-matte-green;
+    }
+  }
+}

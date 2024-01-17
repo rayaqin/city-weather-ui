@@ -2,13 +2,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "./store"
 import { CapitalCity } from "../utils/types"
+import Cookies from "js-cookie"
 
 export interface SelectedCapitalsState {
   value: CapitalCity[]
 }
 
 const initialState: SelectedCapitalsState = {
-  value: [],
+  value:
+    ([
+      ...JSON.parse(Cookies.get("selectedCapitals") ?? "[]"),
+    ] as CapitalCity[]) ?? [],
 }
 
 export const selectedCapitalsSlice = createSlice({
@@ -20,11 +24,13 @@ export const selectedCapitalsSlice = createSlice({
         return
       }
       state.value = [...state.value, action.payload]
+      Cookies.set("selectedCapitals", JSON.stringify(state.value))
     },
     removeCapital: (state, action: PayloadAction<CapitalCity["name"]>) => {
       state.value = state.value.filter(
         (capital) => capital.name !== action.payload,
       )
+      Cookies.set("selectedCapitals", JSON.stringify(state.value))
     },
   },
 })

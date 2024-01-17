@@ -1,0 +1,148 @@
+@import "../../utils/_variables.scss";
+
+.home-page-outer-shell {
+  margin-top: 2rem;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .inner-shell {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem;
+    flex: 1;
+
+    @media (max-width: 460px) {
+      gap: 0.8rem;
+      padding: 1rem;
+    }
+
+    .capital-list {
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+      flex: 1;
+      max-width: 30rem;
+
+      @media (max-width: 460px) {
+        gap: 0.5rem;
+      }
+
+      .no-capitals {
+        padding: 2rem 4rem;
+        border-radius: 0.5rem;
+        background-color: $color-soft-dark;
+        font-size: 1.5rem;
+
+        div {
+          margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 460px) {
+          font-size: 1.3rem;
+          padding: 1.5rem 3rem;
+        }
+
+        &.light {
+          background-color: $color-soft-green;
+          color: $color-matte-green;
+        }
+      }
+
+      .capital-button {
+        text-align: center;
+        font-size: 2rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease-in-out;
+        word-break: break-all;
+
+        background-color: $color-soft-dark;
+
+        &:hover {
+          background-color: $color-intense-deep;
+        }
+
+        &.light {
+          background-color: $color-soft-green;
+          color: $color-matte-green;
+
+          &:hover {
+            background-color: $color-bright-green;
+          }
+        }
+
+        @media (max-width: 460px) {
+          font-size: 1.4rem;
+          padding: 0.3rem 0.5rem;
+        }
+      }
+    }
+  }
+
+  .add-sign-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.57rem;
+    border-radius: 1.2rem;
+    height: fit-content;
+    background-color: $color-bright-pearl;
+    color: $color-deep-dark;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $color-intense-bright;
+      transform: scale(1.05);
+    }
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    &.light {
+      background-color: $color-matte-green;
+      color: $color-bright-pearl;
+
+      &:hover {
+        background-color: $color-intense-green;
+      }
+    }
+
+    @media (max-width: 460px) {
+      padding: 0.3rem;
+      border-radius: 0.8rem;
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+
+    &.wiggle-animation {
+      animation: wiggle 2s infinite;
+    }
+
+    @keyframes wiggle {
+      0%,
+      75% {
+        transform: rotate(0deg);
+      }
+      81.25% {
+        transform: rotate(-5deg) scale(1.02);
+      }
+      87.5% {
+        transform: rotate(5deg) scale(1.05);
+      }
+      93.75% {
+        transform: rotate(-5deg) scale(1.02);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+  }
+}

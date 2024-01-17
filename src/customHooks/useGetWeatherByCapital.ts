@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
-import { CapitalCity } from "../utils/types"
+import { CapitalCity, WeatherData } from "../utils/types"
 
 const geolocationAPIURLBase: string = import.meta.env.VITE_GEOLOCATION_API_URL
 const weatherAPIURLBase: string = import.meta.env.VITE_WEATHER_API_URL
 const weatherAPIKey: string = import.meta.env.VITE_WEATHER_API_KEY
 
 const useGetWeatherByCapital = (capital: CapitalCity["name"]) => {
-  const [weatherData, setWeatherData] = useState(null)
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<Error | null>(null)
 
@@ -16,16 +16,22 @@ const useGetWeatherByCapital = (capital: CapitalCity["name"]) => {
     const fetchData = async () => {
       try {
         const response = await fetch(geolocationApiURL)
-        const geoData = await response.json()
 
-        console.log("geodata:", geoData)
+        if (!response.ok) {
+          throw new Error("Failed to fetch geolocation data")
+        }
+
+        const geoData = await response.json()
 
         const weatherAPIUrl = `${weatherAPIURLBase}?lat=${geoData[0].lat}&lon=${geoData[0].lon}&appid=${weatherAPIKey}&units=metric`
 
         const weatherResponse = await fetch(weatherAPIUrl)
-        const weatherData = await weatherResponse.json()
 
-        console.log("weatherData: ", weatherData)
+        if (!weatherResponse.ok) {
+          throw new Error("Failed to fetch weather data")
+        }
+
+        const weatherData = await weatherResponse.json()
 
         setWeatherData(weatherData)
         setLoading(false)

@@ -1,59 +1,80 @@
-export interface CapitalCity {
+export type CapitalCity = {
   name: string
 }
 
-export type Weather = {
-  cod: string
-  message: number
-  cnt: number
-  list: {
-    dt: number
-    main: {
-      temp: number
-      temp_min: number
-      temp_max: number
-      pressure: number
-      sea_level: number
-      grnd_level: number
-      humidity: number
-      temp_kf: number
-      feels_like: number
-    }
-    weather: {
-      id: number
-      main:
-        | "Thunderstorm"
-        | "Drizzle"
-        | "Rain"
-        | "Snow"
-        | "Clear"
-        | "Clouds"
-        | "Haze"
-        | "Mist"
-      description: string
-      icon: string
-    }[]
-    clouds: {
-      all: number
-    }
-    wind: {
-      speed: number
-      deg: number
-    }
-    sys: {
-      pod: string
-    }
-    dt_txt: string
-    rain?: undefined
-    snow?: undefined
-  }[]
-  city: {
-    id: number
-    name: string
-    coord: {
-      lat: number
-      lon: number
-    }
-    country: string
-  }
+export type CapitalData = {
+  capital: string
+  [key: string]: string
 }
+
+export type WeatherIconCode =
+  | "01d"
+  | "01n"
+  | "02d"
+  | "02n"
+  | "03d"
+  | "03n"
+  | "04d"
+  | "04n"
+  | "09d"
+  | "09n"
+  | "10d"
+  | "10n"
+  | "11d"
+  | "11n"
+  | "13d"
+  | "13n"
+  | "50d"
+  | "50n"
+
+export type WeatherData = {
+  coord: {
+    lon: number
+    lat: number
+  }
+  weather: {
+    id: number
+    main:
+      | "Thunderstorm"
+      | "Drizzle"
+      | "Rain"
+      | "Snow"
+      | "Clear"
+      | "Clouds"
+      | "Haze"
+      | "Mist"
+    description: string
+    icon: WeatherIconCode
+  }[]
+  base: string
+  main: {
+    temp: number
+    feels_like: number
+    temp_min: number
+    temp_max: number
+    pressure: number
+    humidity: number
+  }
+  visibility: number
+  wind: {
+    speed: number
+    deg: number
+  }
+  clouds: {
+    all: number
+  }
+  dt: number
+  sys: {
+    type: number
+    id: number
+    country: string
+    sunrise: number
+    sunset: number
+  }
+  timezone: number
+  id: number
+  name: string
+  cod: number
+}
+
+export type ThemeType = "dark" | "light"

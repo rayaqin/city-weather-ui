@@ -1,0 +1,142 @@
+@import "../../utils/_variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Calistoga&display=swap");
+
+.capital-search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-size: 2rem;
+
+  .text-input {
+    border: none;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    background-color: $color-soft-dark;
+    color: $color-bright-pearl;
+    width: 90%;
+    max-width: 30rem;
+    transition: all 0.3s ease-in-out;
+
+    &::placeholder {
+      color: $color-soft-pearl;
+      opacity: 1;
+      text-align: center;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: $color-intense-deep;
+    }
+
+    &.light {
+      background-color: $color-soft-green;
+      color: $color-matte-green;
+
+      &::placeholder {
+        color: $color-matte-green;
+      }
+
+      &:focus {
+        background-color: $color-bright-green;
+      }
+    }
+  }
+
+  .no-results {
+    font-size: 1.5rem;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: $color-soft-blue;
+
+    &.light {
+      color: $color-bright-green;
+    }
+
+    svg {
+      margin-top: 5rem;
+      width: 4.5rem;
+      height: 4.5rem;
+    }
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+    min-width: 20rem;
+
+    li {
+      margin-bottom: 0.5rem;
+      text-align: center;
+      border-radius: 0.8rem;
+      padding: 0.4rem 1rem;
+      background-color: $color-pale-dark;
+      cursor: pointer;
+
+      &.highlighted {
+        background-color: $color-intense-deep;
+      }
+
+      .hit-text {
+        font-weight: bold;
+        color: $color-soft-blue;
+      }
+
+      &:hover {
+        background-color: $color-softest-bright;
+      }
+
+      &.light {
+        background-color: $color-low-green;
+        color: white;
+
+        &:hover {
+          background-color: $color-bright-green;
+        }
+
+        .hit-text {
+          color: $color-matte-green;
+        }
+
+        &.highlighted {
+          background-color: rgba($color-bright-green, 0.65);
+        }
+      }
+    }
+  }
+
+  button {
+    display: none;
+    margin: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-family: "Calistoga", serif;
+    font-size: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    color: $color-bright-pearl;
+    background-color: $color-softest-bright;
+
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-intense-bright;
+      padding: 0.5rem 1.7rem;
+    }
+
+    &.displayed {
+      display: block;
+    }
+
+    &.light {
+      background-color: $color-matte-green;
+      color: $color-bright-pearl;
+
+      &:hover {
+        background-color: $color-intense-green;
+      }
+    }
+  }
+}
