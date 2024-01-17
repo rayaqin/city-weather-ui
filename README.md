@@ -28,15 +28,21 @@ This repo has been created as part of an interview process to fulfill the follow
 
 ## Extra bits
 
-- **Added loading animations** _(properly visible at low network speeds)_, **a wiggle animation for the button that implies what to do, and a theme switcher button** _(the default theme depends on the browser preferences of the user, and the manual choice is stored in local storage)_. <br>
-  <img style="height:5rem;border-radius:0.5rem;max-width:23rem;margin:1rem;" src="./showcaseAssets/loadingRun.gif" />
-  <img style="height:5rem;border-radius:0.5rem;max-width:23rem;margin:1rem;" src="./showcaseAssets/wiggleButton.gif" />
-  <img style="height:5rem;border-radius:0.5rem;max-width:23rem;margin:1rem;" src="./showcaseAssets/darkSwitch.gif" />
+- **Added loading animations** _(properly visible at low network speeds)_, **a wiggle animation for the button that implies what to do, and a theme switcher button** _(the default theme depends on the browser preferences of the user, and the manual choice is stored in local storage)_.
 
-- **Made some empty states for the components:** <br>
-  <img style="border-radius:0.5rem;max-width:23rem;margin:1rem;" src="./showcaseAssets/noSearchResults.png" /> <br>
-  <img style="border-radius:0.5rem;max-width:23rem;margin:1rem;" src="./showcaseAssets/emptyWatchlist.png" /> <br>
-  <img style="border-radius:0.5rem;max-width:23rem;margin:1rem;" src="./showcaseAssets/allAdded.png" /> <br>
+<br>
+
+<img style="height:5rem;border-radius:0.5rem;max-width:23rem;margin:1rem;" src="./showcaseAssets/loadingRun.gif" />
+<img style="height:5rem;border-radius:0.5rem;max-width:23rem;margin:1rem;" src="./showcaseAssets/wiggleButton.gif" />
+<img style="height:5rem;border-radius:0.5rem;max-width:23rem;margin:1rem;" src="./showcaseAssets/darkSwitch.gif" />
+
+<br>
+
+- **Made some empty states for the components:**
+
+<img style="border-radius:0.5rem;max-width:23rem;margin:1rem;" src="./showcaseAssets/noSearchResults.png" /> <br>
+<img style="border-radius:0.5rem;max-width:23rem;margin:1rem;" src="./showcaseAssets/emptyWatchlist.png" /> <br>
+<img style="border-radius:0.5rem;max-width:23rem;margin:1rem;" src="./showcaseAssets/allAdded.png" /> <br>
 
 - **Stored the selected capitals in a cookie, so they persist after refresh.**
 - **Hover effects.**
