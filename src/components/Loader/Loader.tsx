@@ -23,7 +23,7 @@ const Loader: React.FC = () => {
   );
 };
 
-const Cloud: React.FC = () => {
+export const Cloud: React.FC = () => {
   const { theme } = useTheme();
   return (
     <div className={appendThemeClass("rain-cloud-box", theme)} >
