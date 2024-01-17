@@ -41,12 +41,21 @@ img {
 }
 </style>
 
-<img class="small" src="./showcaseAssets/wiggleButton.gif" />
-<img class="small" src="./showcaseAssets/darkSwitch.gif" />
-<img class="small" src="./showcaseAssets/loadingRun.gif" />
-<img class="medium" src="./showcaseAssets/noSearchResults.png" />
-<img class="medium" src="./showcaseAssets/emptyWatchlist.png" />
-<img class="medium" src="./showcaseAssets/allAdded.png" />
+- **Added loading animations** _(properly visible at low network speeds)_, **a wiggle animation for the button that implies what to do, and a theme switcher button** _(the default theme depends on the browser preferences of the user, and the manual choice is stored in local storage)_. <br>
+  <img class="small" src="./showcaseAssets/loadingRun.gif" />
+  <img class="small" src="./showcaseAssets/wiggleButton.gif" />
+  <img class="small" src="./showcaseAssets/darkSwitch.gif" />
+
+- **Made some error states for the components:** <br>
+  <img class="medium" src="./showcaseAssets/noSearchResults.png" /> <br>
+  <img class="medium" src="./showcaseAssets/emptyWatchlist.png" /> <br>
+  <img class="medium" src="./showcaseAssets/allAdded.png" /> <br>
+
+- **Stored the selected capitals in a cookie, so they persist after refresh.**
+- **Hover effects.**
+- **Mobile first responsive UI.**
+- **Selecting and saving a capital can be done by using the `arrow keys` and `Enter`. Cancellation is possible with `Esc`.**
+- **Capitals can be removed from the watchlist by the delete button on their dedicated info page.**
 
 ## Quick Setup
 
