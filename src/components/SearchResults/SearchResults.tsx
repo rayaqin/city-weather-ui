@@ -22,8 +22,12 @@ const SearchResults: React.FC<SearchResultsProps> = ({
   const { theme } = useTheme();
 
   const textWithHighlight = (text: string, partToHighlight: string) => {
-    if (!text.includes(partToHighlight)) return text;
-    const index = text.toLowerCase().indexOf(partToHighlight.toLowerCase());
+    const lText = text.toLowerCase();
+    const lPartToHighlight = partToHighlight.toLowerCase();
+
+    if (!lText.includes(lPartToHighlight)) return text;
+
+    const index = lText.indexOf(lPartToHighlight);
     const firstPart = text.slice(0, index);
     const partToHighlightWithRightCase = text.slice(index, index + partToHighlight.length);
     const secondPart = text.slice(index + partToHighlight.length);
