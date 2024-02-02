@@ -1,4 +1,4 @@
-# Bene:studio coding challenge
+# Interview coding challenge
 
 This repo has been created as part of an interview process to fulfill the following requirements:
 
