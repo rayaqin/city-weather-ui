@@ -77,4 +77,4 @@ Since the requirements specified using **Redux**, I opted to try one of the rela
 
 ## Not using a library for the search box
 
-Given a similar task in a real situation I would probably have used a react library for the autocomplete search box, but I thought that would partly defeat the purpose of this coding task, since that is one of the more complex aspects of this app.
+Given a similar task in a real situation I would probably have used a react library for the autocomplete search box, but I thought that would partly defeat the purpose of this coding task, since that is one of the slightly more challenging aspects of this app.
